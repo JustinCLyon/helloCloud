@@ -1,21 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<fruits >
-	<fruit>
-		<name>Orange</name>
-		<shape>Round</shape>
-		<harvest-season>Winter</harvest-season>
-		<family>Rutaceae</family>
-	</fruit>
-	<fruit>
-		<name>Apple</name>
-		<shape>Round</shape>
-		<harvest-season>Fall</harvest-season>
-		<family>Rosaceae</family>
-	</fruit>
-	<fruit>
-		<name>Banana</name>
-		<shape>Elongated</shape>
-		<harvest-season>Winter</harvest-season>
-		<family>Musaceae</family>
-	</fruit>
+<?xml version="1.0"?>
+<fruits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.fruit.org">
+  <fruit>
+    <name>Apple</name>
+    <shape>Round</shape>
+    <harvest-season>Winter</harvest-season>
+    <family>Rutaceae</family>
+  </fruit>
+  <fruit>
+    <name>Orange</name>
+    <shape>Round</shape>
+    <harvest-season>Winter</harvest-season>
+    <family>Rucaceae</family>
+  </fruit>
+  <fruit>
+    <name>Banana</name>
+    <shape>Elongated</shape>
+    <harvest-season>Winter</harvest-season>
+    <family>Musaceae</family>
+  </fruit>
+  <fruit>
+    <name>Peach</name>
+    <shape>Round</shape>
+    <harvest-season>Spring</harvest-season>
+    <family>Rosaceae</family>
+  </fruit>
 </fruits>

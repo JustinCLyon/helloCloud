@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace helloGCP.Models
 {
-    public class FruitViewModel
+    public class Fruit
     {
         public int Id { get; set; }
 
@@ -17,30 +17,42 @@ namespace helloGCP.Models
         public string Shape { get; set; }
 
         [Display(Name = "Harvest Season")]
-        public String HarvestSeason { get; set; }
+        public fruitsFruitHarvestseason HarvestSeason { get; set; }
 
         [Display(Name = "Family")]
         public string Family { get; set; }
 
-        public static List<FruitViewModel> GetFruitModelList(fruits fruitList)
+        public static List<Fruit> GetFruitModelList(fruits fruitList)
         {
-            List<FruitViewModel> fruitViewList = new List<FruitViewModel>();
+            List<Fruit> fruitViewList = new List<Fruit>();
             int i = 1;
 
-            foreach (fruitsFruit fr in fruitList.Items) 
+            foreach (fruitsFruit fr in fruitList.fruit) 
             {
-                FruitViewModel currentFruit = new FruitViewModel();
+                Fruit currentFruit = new Fruit();
 
                 currentFruit.Id = i;
                 currentFruit.Name = fr.name;
                 currentFruit.Shape = fr.shape;
-                currentFruit.HarvestSeason = fr.harvestseason.ToString();
+                currentFruit.HarvestSeason = fr.harvestseason;
                 currentFruit.Family = fr.family;
 
                 fruitViewList.Add(currentFruit);
                 i++;
             }
             return fruitViewList;
+        }
+
+        public static fruits EditFruit(fruits fruitList, Fruit fruit)
+        {
+            fruitsFruit currentFruit = fruitList.fruit[fruit.Id - 1];
+
+            currentFruit.name = fruit.Name;
+            currentFruit.shape = fruit.Shape;
+            currentFruit.harvestseason = fruit.HarvestSeason;
+            currentFruit.family = fruit.Family;
+
+            return fruitList;
         }
     }
 }

@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="fruits" xmlns="http://testapp.com/fruits" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-  <xs:element name="fruits" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
-    <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="fruit">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="name" type="xs:string" minOccurs="0" />
-              <xs:element name="shape" type="xs:string" minOccurs="0" />
-				<xs:element name="harvest-season">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:enumeration value="Spring" />
-						    <xs:enumeration value="Summer" />
-					        <xs:enumeration value="Fall" />
-				            <xs:enumeration value="Winter" />
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-              <xs:element name="family" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:choice>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.fruit.org">
+	<xsd:element name="fruits">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" name="fruit">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="name" type="xsd:string" />
+							<xsd:element name="shape" type="xsd:string" />
+							<xs:element name="harvest-season">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Spring" />
+										<xs:enumeration value="Summer" />
+										<xs:enumeration value="Fall" />
+										<xs:enumeration value="Winter" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xsd:element name="family" type="xsd:string" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
 </xs:schema>

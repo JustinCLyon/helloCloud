@@ -20,20 +20,20 @@ using System.Xml.Serialization;
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-[System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.fruit.org")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.fruit.org", IsNullable=false)]
 public partial class fruits {
     
-    private fruitsFruit[] itemsField;
+    private fruitsFruit[] fruitField;
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("fruit", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public fruitsFruit[] Items {
+    [System.Xml.Serialization.XmlElementAttribute("fruit")]
+    public fruitsFruit[] fruit {
         get {
-            return this.itemsField;
+            return this.fruitField;
         }
         set {
-            this.itemsField = value;
+            this.fruitField = value;
         }
     }
 }
@@ -43,7 +43,7 @@ public partial class fruits {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.fruit.org")]
 public partial class fruitsFruit {
     
     private string nameField;
@@ -55,7 +55,6 @@ public partial class fruitsFruit {
     private string familyField;
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
     public string name {
         get {
             return this.nameField;
@@ -66,7 +65,6 @@ public partial class fruitsFruit {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
     public string shape {
         get {
             return this.shapeField;
@@ -77,7 +75,7 @@ public partial class fruitsFruit {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("harvest-season", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    [System.Xml.Serialization.XmlElementAttribute("harvest-season")]
     public fruitsFruitHarvestseason harvestseason {
         get {
             return this.harvestseasonField;
@@ -88,7 +86,6 @@ public partial class fruitsFruit {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
     public string family {
         get {
             return this.familyField;
@@ -102,7 +99,7 @@ public partial class fruitsFruit {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.fruit.org")]
 public enum fruitsFruitHarvestseason {
     
     /// <remarks/>

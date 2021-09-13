@@ -1,15 +1,19 @@
-﻿@model IEnumerable<helloGCP.Models.FruitViewModel>
+﻿@model IEnumerable<helloGCP.Models.Fruit>
 
 @{
     ViewData["Title"] = "View";
 }
-
 <h1>View</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+
+<div id="search" class="col-4 mb-3">
+    <label for="txtSearch" id="lblSearch" class="col-form-label">Search: </label>
+    <input type="text" id="txtSearch" class="form-control" onkeyup="searchRows()" ClientMode="Static" />
+</div>
+<table class="table" id="fruit-table">
     <thead>
         <tr>
             <th>
@@ -36,7 +40,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
-            <td>
+            <td id="fruit">
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
@@ -49,9 +53,8 @@
                 @Html.DisplayFor(modelItem => item.Family)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
